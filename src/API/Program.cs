@@ -3,6 +3,7 @@ using Application.Services;
 using Infrastructure.Persistence;
 using Infrastructure.Repositories;
 using Microsoft.EntityFrameworkCore;
+using Application.Mapping; // mapping profile namespace
 
 var builder = WebApplication.CreateBuilder(args);
 
