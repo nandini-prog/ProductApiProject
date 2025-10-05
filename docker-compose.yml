@@ -1,0 +1,14 @@
+api:
+  build:
+    context: ./src/API
+    dockerfile: Dockerfile
+  container_name: product-api
+  environment:
+    ConnectionStrings__DefaultConnection: "Server=sqlserver,1433;Database=ProductDb;User Id=sa;Password=YourStrong!Passw0rd;"
+    ASPNETCORE_ENVIRONMENT: "Development"
+  ports:
+    - "5000:5000"
+    - "5001:5001"
+  depends_on:
+    sqlserver:
+      condition: service_healthy
